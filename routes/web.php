@@ -71,7 +71,7 @@ Route::get('/welcome', function () {
 //route dosen
 Route::get('dosen', [Link::class, 'index']);
 //route pegawai
-Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
+//Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
 
 //route formulir
 Route::get('/formulir', [PegawaiController::class, 'formulir']);
@@ -82,6 +82,15 @@ Route::get('/blog', [BlogController::class, 'home']);
 Route::get('/blog/tentang', [BlogController::class, 'tentang']);
 Route::get('/blog/kontak', [BlogController::class, 'kontak']);
 
+//==========================pertemuan 13==============================================
+
+//route CRUD
+Route::get('/pegawai', [PegawaiController::class,   'index']);
+Route::get('/pegawai/tambah',[PegawaiController::class, 'tambah']);
+Route::post('/pegawai/store',[PegawaiController::class, 'store']);
+Route::get('/pegawai/edit/{id}',[PegawaiController::class, 'edit']);
+Route::post('/pegawai/update',[PegawaiController::class, 'update']);
+Route::get('/pegawai/hapus/{id}',[PegawaiController::class, 'hapus']);
 
 
 ?>
