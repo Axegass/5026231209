@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Link ;
 use App\Http\Controllers\PegawaiController ;
 use App\Http\Controllers\BlogController ;
-
+use App\Http\Controllers\KulkasController ;
 
 //import java.io
 
@@ -67,6 +67,8 @@ Route::get('/welcome', function () {
 	return view('welcome');
 });
 
+
+
 //==========================Pertemuan 12=========================================
 //route dosen
 Route::get('dosen', [Link::class, 'index']);
@@ -95,6 +97,17 @@ Route::get('/pegawai/cari',[PegawaiController::class, 'cari']);
 
 
 //=========================================================
+
+//route CRUD
+Route::get('/kulkas', [KulkasController::class,   'index']);
+Route::get('/kulkas/tambah',[KulkasController::class, 'tambah']);
+Route::post('/kulkas/store',[KulkasController::class, 'store']);
+Route::get('/kulkas/edit/{id}',[KulkasController::class, 'edit']);
+Route::post('/kulkas/update',[KulkasController::class, 'update']);
+Route::get('/kulkas/hapus/{id}',[KulkasController::class, 'hapus']);
+Route::get('/kulkas/cari',[KulkasController::class, 'cari']);
+
+//route allFrontEnd
 
 
 ?>
