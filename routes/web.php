@@ -5,6 +5,7 @@ use App\Http\Controllers\Link ;
 use App\Http\Controllers\PegawaiController ;
 use App\Http\Controllers\BlogController ;
 use App\Http\Controllers\KulkasController ;
+use App\Http\Controllers\karyawanController ;
 
 //import java.io
 
@@ -107,7 +108,13 @@ Route::post('/kulkas/update',[KulkasController::class, 'update']);
 Route::get('/kulkas/hapus/{id}',[KulkasController::class, 'hapus']);
 Route::get('/kulkas/cari',[KulkasController::class, 'cari']);
 
-//route allFrontEnd
+//=========================================================
+
+//route CRUD
+Route::get('/karyawan', [KaryawanController::class,   'index']);
+Route::get('/karyawan/tambah',[KaryawanController::class, 'tambah']);
+Route::post('/karyawan/store',[KaryawanController::class, 'store']);
+Route::get('/karyawan/hapus/{id}',[KaryawanController::class, 'hapus']);
 
 
 ?>
