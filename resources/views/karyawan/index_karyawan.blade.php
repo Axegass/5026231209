@@ -33,7 +33,3 @@
 
 {{ $karyawan->links() }}
 @endsection
-
-
-
-

@@ -6,6 +6,8 @@ use App\Http\Controllers\PegawaiController ;
 use App\Http\Controllers\BlogController ;
 use App\Http\Controllers\KulkasController ;
 use App\Http\Controllers\karyawanController ;
+use App\Http\Controllers\KeranjangBelanjaController;
+use App\Http\Controllers\karyawanController1 ;
 
 //import java.io
 
@@ -110,11 +112,29 @@ Route::get('/kulkas/cari',[KulkasController::class, 'cari']);
 
 //=========================================================
 
-//route CRUD
+//route CRUD tugas 1
 Route::get('/karyawan', [KaryawanController::class,   'index']);
 Route::get('/karyawan/tambah',[KaryawanController::class, 'tambah']);
 Route::post('/karyawan/store',[KaryawanController::class, 'store']);
 Route::get('/karyawan/hapus/{id}',[KaryawanController::class, 'hapus']);
+
+//===========================================================
+
+//route CRUD tugas 2
+Route::get('/keranjangbelanja', [KeranjangBelanjaController::class,   'index']);
+Route::get('/keranjangbelanja/tambah',[KeranjangBelanjaController::class, 'tambah']);
+Route::post('/keranjangbelanja/store',[KeranjangBelanjaController::class, 'store']);
+Route::get('/keranjangbelanja/hapus/{id}',[KeranjangBelanjaController::class, 'hapus']);
+
+//============================================================
+
+//route CRUD tugas 3
+Route::get('/karyawan2', [KaryawanController1::class, 'index'])->name('karyawan.index');
+Route::get('/karyawan2/create', [KaryawanController1::class, 'create'])->name('karyawan.create');
+Route::post('/karyawan2', [KaryawanController1::class, 'store'])->name('karyawan.store');
+Route::get('/karyawan2/{kodepegawai}/edit', [KaryawanController1::class, 'edit'])->name('karyawan.edit');
+Route::put('/karyawan2/{kodepegawai}', [KaryawanController1::class, 'update'])->name('karyawan.update');
+Route::delete('/karyawan2/{kodepegawai}', [KaryawanController1::class, 'destroy'])->name('karyawan.destroy');
 
 
 ?>
