@@ -8,6 +8,8 @@ use App\Http\Controllers\KulkasController ;
 use App\Http\Controllers\karyawanController ;
 use App\Http\Controllers\KeranjangBelanjaController;
 use App\Http\Controllers\karyawanController1 ;
+use App\Http\Controllers\NilaiController ;
+
 
 //import java.io
 
@@ -135,6 +137,15 @@ Route::post('/karyawan2', [KaryawanController1::class, 'store'])->name('karyawan
 Route::get('/karyawan2/{kodepegawai}/edit', [KaryawanController1::class, 'edit'])->name('karyawan.edit');
 Route::put('/karyawan2/{kodepegawai}', [KaryawanController1::class, 'update'])->name('karyawan.update');
 Route::delete('/karyawan2/{kodepegawai}', [KaryawanController1::class, 'destroy'])->name('karyawan.destroy');
+
+//============================================================
+
+//route CRUS EAS
+Route::get('/nilai', [NilaiController::class,   'index']);
+Route::get('/nilai/tambah',[NilaiController::class, 'tambah']);
+Route::post('/nilai/store',[NilaiController::class, 'store']);
+
+
 
 
 ?>
